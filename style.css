@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background: #f9ff6b;
+  min-height: 100vh;
+}
+
+#circle {
+  width: 700px;
+  aspect-ratio: 1/1;
+  background: white;
+  border-radius: 50%;
+}
+
+#calculator-container {
+  width: 350px;
+
+  background: #d7e1e2;
+
+  border-radius: 30px 30px 10px 10px;
+  border: 1px solid black;
+}
+
+#display-container {
+  background: #a6b8cc;
+  border-radius: 30px 30px 0px 0px;
+  height: 130px;
+  border-bottom: 1px solid black;
+}
+
+#display {
+  background: #d7e1e2;
+  width: 250px;
+  height: 70px;
+  padding: 0px 10px;
+  border: 1px solid black;
+
+  font-family: "Orbitron", sans-serif;
+  line-height: 70px;
+  text-align: right;
+  font-size: 2rem;
+}
+
+#keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+  padding: 30px;
+}
+
+.key-btn {
+  background: #606163;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  border: 2px solid rgba(0, 0, 0, 0.425);
+  border-radius: 10px;
+
+  box-shadow: inset 3px 3px #ffffff4b;
+
+  cursor: pointer;
+}
+
+.key-btn:active {
+  opacity: 0.9;
+  box-shadow: inset 2px 2px #ffffff4b;
+}
+
+.square {
+  aspect-ratio: 1/1;
+}
+
+.key-btn#zero {
+  grid-column: 1 / span 2;
+}
+
+.key-btn#equal {
+  grid-column: 4;
+  grid-row: 4 / span 2;
+}
+
+.key-btn#AC,
+.key-btn#C,
+.key-btn#multiply,
+.key-btn#divide {
+  background: #2d97ff;
+}
+
+.key-btn#equal {
+  background: #ae3e00;
+}
