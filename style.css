@@ -94,7 +94,7 @@ body {
 }
 
 .key-btn#AC,
-.key-btn#C,
+.key-btn#delete,
 .key-btn#multiply,
 .key-btn#divide {
   background: #2d97ff;

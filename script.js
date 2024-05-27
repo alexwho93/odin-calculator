@@ -54,7 +54,7 @@ document.querySelector("#AC").addEventListener("click", () => {
   writeToScreen("0");
 });
 
-// add events to numbers
+// add functionality to numbers
 const numberNodes = document.querySelectorAll(".number");
 numberNodes.forEach((node) =>
   node.addEventListener("click", () => {
@@ -68,7 +68,7 @@ numberNodes.forEach((node) =>
   })
 );
 
-// add events to operators
+// add functionality to operators
 const operationNodes = document.querySelectorAll(".operation");
 operationNodes.forEach((node) =>
   node.addEventListener("click", () => {
@@ -82,10 +82,32 @@ operationNodes.forEach((node) =>
   })
 );
 
-// add events to "="
+// add functionality to "="
 document.querySelector("#equal").addEventListener("click", () => {
   const result = operate(n1, op, n2);
   writeToScreen(result);
   n1 = result;
   n2 = 0;
+});
+
+// add functionality to "C" or delete
+document.querySelector("#delete").addEventListener("click", () => {
+  if (n1.length > 1 && !n2) {
+    n1 = n1.slice(0, -1);
+    writeToScreen(n1);
+  } else if (n2.length > 1) {
+    n2 = n2.slice(0, -1);
+    writeToScreen(n2);
+  }
+});
+
+// add functionality to "." or float point
+document.querySelector("#float").addEventListener("click", () => {
+  if (n1.length >= 1 && !n2 && !n1.includes(".")) {
+    n1 = n1 + ".";
+    writeToScreen(n1);
+  } else if (n2.length >= 1 && !n2.includes(".")) {
+    n2 = n2 + ".";
+    writeToScreen(n2);
+  }
 });
